@@ -25,7 +25,7 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   watch(%r{^app/controllers/(.*?)_controller\.rb$}) do |matches|
     resource_tests(matches[1])
   end
-  watch(%r{^app/views/([^/]*?)/.*\.html\.erb$}) do |matches|
+  watch(%r{^app/views/([^/]*?)/.*¥.html\.erb$}) do |matches|
     ["test/controllers/#{matches[1]}_controller_test.rb"] +
     integration_tests(matches[1])
   end
@@ -51,7 +51,7 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   end
 end
 
-  # 与えられたリソースに対応する統合テストを返す
+# 与えられたリソースに対応する統合テストを返す
 def integration_tests(resource = :all)
   if resource == :all
     Dir["test/integration/*"]  else
@@ -59,15 +59,16 @@ def integration_tests(resource = :all)
   end
 end
 
-  # 与えられたリソースに対応するコントローラのテストを返す
+# 与えられたリソースに対応するコントローラのテストを返す
 def controller_test(resource)
   "test/controllers/#{resource}_controller_test.rb"
 end
 
-  # 与えられたリソースに対応するすべてのテストを返す
+# 与えられたリソースに対応するすべてのテストを返す
 def resource_tests(resource)
   integration_tests(resource) << controller_test(resource)
 end
+
   # with Minitest::Spec
   # watch(%r{^spec/(.*)_spec\.rb$})
   # watch(%r{^lib/(.+)\.rb$})         { |m| "spec/#{m[1]}_spec.rb" }
@@ -86,4 +87,3 @@ end
   # watch(%r{^app/controllers/(.*)\.rb$}) { |m| "test/functional/#{m[1]}_test.rb" }
   # watch(%r{^app/helpers/(.*)\.rb$})     { |m| "test/helpers/#{m[1]}_test.rb" }
   # watch(%r{^app/models/(.*)\.rb$})      { |m| "test/unit/#{m[1]}_test.rb" }
-end
