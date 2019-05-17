@@ -228,6 +228,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.6)
   rails-controller-testing
+  rake
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

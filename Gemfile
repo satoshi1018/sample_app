@@ -34,6 +34,7 @@ gem 'faker'
 # gem 'capistrano-rails', group: :development
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'rake'
 
 group :development, :test do
   gem 'sqlite3'
