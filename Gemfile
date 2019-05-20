@@ -38,6 +38,7 @@ gem 'rake'
 gem 'carrierwave'
 gem 'mini_magick'
 
+
 group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,7 +65,7 @@ end
 
 group :production do
   gem 'pg'
-  gem 'fog'
+  gem 'fog-aws'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
