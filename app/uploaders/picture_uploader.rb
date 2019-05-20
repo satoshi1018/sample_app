@@ -5,7 +5,11 @@ class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_limit: [400, 400]
   # Choose what kind of storage to use for this uploader:
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> user-microposts
   if Rails.env.production?
     storage :fog
   else

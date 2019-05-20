@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
@@ -16,3 +17,23 @@
 <% else %>
   <%= render 'static_pages/user_not_logged_in' %>  
 <% end %>
+=======
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <%= render 'static_pages/user_not_logged_in' %>  
+<% end %>
+>>>>>>> user-microposts
